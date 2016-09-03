@@ -1,5 +1,5 @@
 # Summary
 
-* Getting Started
 * Introduction
+* Getting Started
 
