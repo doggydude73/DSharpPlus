@@ -1,5 +1,5 @@
 # Summary
 
-* Getting Started
+* [Getting Started](getting_started.md)
    * Your First Bot
 
