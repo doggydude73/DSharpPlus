@@ -1,28 +1,37 @@
 # Getting Started
 
-## Starting off
+## 1. Installation and setup
 
-### Building
-
-#### Git
+### 1.1 Git
 
 First start off by downloading the git repo
 
 `git clone https://github.com/NaamloosDT/SharpCord.git`
 
-Use the following code to get started quickly.
+Then open the project in Visual Studio, and build the class library.
+After you have done that, make a new C# console program project. Set the class library as a reference. Then use move to 2.
 
+
+## 2. Connecting
+Start your bot off with this code.
 ```
-DiscordClient client = new DiscordClient();
-client.ClientPrivateInformation.Email = "email";
-client.ClientPrivateInformation.Password = "pass";
+using SharpCord;
 
-client.Connected += (sender, e) =>
-{
-  Console.WriteLine($"Connected! User: {e.User.Username}");
-};
+class Program {
+  void Main() {
+    DiscordClient client = new DiscordClient();
+    client.ClientPrivateInformation.Email = "email";
+    client.ClientPrivateInformation.Password = "pass";
 
-client.SendLoginRequest();
-Thread t = new Thread(client.Connect);
-t.Start();
+    client.Connected += (sender, e) =>
+    {
+      Console.WriteLine($"Connected! User: {e.User.Username}");
+    };
+  }
+
+  client.SendLoginRequest();
+  Thread t = new Thread(client.Connect);
+  t.Start();
+}
 ```
+In a nutshell, the code 
